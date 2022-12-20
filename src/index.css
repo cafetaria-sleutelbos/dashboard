@@ -11,3 +11,148 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.navbar_top {
+  background-color: grey;
+  display: flex;
+  padding: 1em 2em;
+  gap: 1em;
+  border-bottom: 3px solid black;
+}
+
+.navbar_title {
+  font-size: 2em;
+}
+
+.navbar_menu {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar_dropdown {
+  background-color: dimgray;
+  display: none;
+  flex-direction: column;
+}
+
+.navbar_item {
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-bottom: 3px solid grey;
+}
+
+.navbar_item:hover {
+  text-decoration: underline;
+}
+
+.page {
+  width: 100%;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-top: 1em;
+}
+
+.home_titles {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.home_left {
+  width: 30vw;
+  max-height: 90vh;
+}
+
+.orders_container {
+  overflow-y: scroll;
+  height: 77.5vh;
+  border: 1px solid black;
+}
+
+.order_row {
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.order_row:nth-child(2n) {
+  background: lightgray
+}
+
+.order_row_content {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 0.75em 1em;
+}
+
+.order_row_title {
+  font-weight: bold;
+}
+
+.home_right {
+  width: 60vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.right_upper {
+  height: 43vh;
+}
+
+.current_container {
+  display: flex;
+  justify-content: left;
+  gap: 1.75em;
+}
+
+.current_card {
+  border: 1px solid black;
+  width: 30%;
+}
+
+.current_card_title {
+  padding: 0.25em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: 1px black solid;
+}
+
+.current_card_content {
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  overflow-y: scroll;
+}
+
+.current_card_content span {
+  border-top: 1px black solid;
+}
+
+.current_card_actions {
+  border-top: 1px black solid;
+  text-align: center;
+  padding: 0.25em 0;
+  background-color: greenyellow;
+}
+
+.right_lower {
+  background-color: darkgreen;
+  height: 40vh;
+}

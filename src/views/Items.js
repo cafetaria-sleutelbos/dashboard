@@ -9,7 +9,6 @@ const Items = () => {
       // Data does't start loading
       // until *after* Parent is mounted
       useEffect(() => {
-        console.log('start')
         axios({
             method: 'GET',
             url: 'http://backoffice.test/api/items',
