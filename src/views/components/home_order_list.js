@@ -1,7 +1,7 @@
 const OrderList = ({ orders, setCurrentCards }) => {
     return (
         <div>
-            <div className='home_titles'>Orders (29)</div>
+            <div className='home_titles'>Orders ({orders.length})</div>
             <div className='orders_container'>
                 {orders.map((order, i) => {
                     return (

@@ -15,16 +15,21 @@ class Home extends React.Component {
     let that = this
     axios({
       method: 'GET',
-      url: 'http://backoffice.test/api/orders',
+      url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders',
     }).then(function (response) {
-      that.setState({
-        current_orders: [response.data.data[0], response.data.data[1], response.data.data[2]],
-        orders: response.data.data,
-        current: ReactDOM.createRoot(document.getElementById('current_container'))
-      })
+      if (response.data < 0) {
+        that.setState({
+          current_orders: [response.data.data[0], response.data.data[1], response.data.data[2]],
+          orders: response.data.data,
+          current: ReactDOM.createRoot(document.getElementById('current_container'))
+        })
+      }else{
+        console.log('No orders found!')
+      }
     })
       .catch(function (error) {
         console.log(error);
+        alert('Failed to get orders! See console for error message.')
       });
   }
   setCurrentCards(order_id) {
