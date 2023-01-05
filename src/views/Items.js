@@ -11,7 +11,8 @@ const Items = () => {
       useEffect(() => {
         axios({
             method: 'GET',
-            url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/items',
+            // url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/items',
+            url: 'http://backoffice.test/api/items',
           }).then(function (response) {
             setItems(response.data);
           })

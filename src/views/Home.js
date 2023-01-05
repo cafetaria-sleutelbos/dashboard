@@ -3,6 +3,8 @@ import * as ReactDOM from 'react-dom/client';
 import axios from 'axios'
 import OrderList from './components/home_order_list.js';
 import CurrentCard from './components/home_current_card';
+import FromTheBackCards from './components/home_from_the_back_card';
+import ExtraTimeCards from './components/home_extra_time_card';
 
 class Home extends React.Component {
   constructor(props) {
@@ -16,8 +18,12 @@ class Home extends React.Component {
     axios({
       method: 'GET',
       url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders',
+      // url: 'http://backoffice.test/api/orders',
     }).then(function (response) {
-      if (response.data < 0) {
+      console.log('response', response)
+      if (response.data.data.length > 0) {
+        console.log('data', response.data.data)
+
         that.setState({
           current_orders: [response.data.data[0], response.data.data[1], response.data.data[2]],
           orders: response.data.data,
@@ -33,10 +39,11 @@ class Home extends React.Component {
       });
   }
   setCurrentCards(order_id) {
-    console.log(this.state)
     let currentOrders = this.state.current_orders
     let inCurrent = this.state.current_orders.findIndex(function (order) {
-      return order.id == order_id
+      if(order){
+        return order.id == order_id
+      }
     });
 
     if (inCurrent > -1) {
@@ -77,7 +84,11 @@ class Home extends React.Component {
             </div>
           </div>
           <div className='right_lower'>
-            bottom
+            <div className='home_titles'>Special</div>
+            <div id='special_container' className='special_container'>
+              {this.state.current_orders && <FromTheBackCards orders={this.state.current_orders} />}
+              {this.state.current_orders && <ExtraTimeCards orders={this.state.current_orders} />}
+            </div>
           </div>
         </div>
       </div>

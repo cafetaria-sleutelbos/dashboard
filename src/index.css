@@ -153,6 +153,18 @@ code {
 }
 
 .right_lower {
-  background-color: darkgreen;
   height: 40vh;
+}
+
+.special_sub_container {
+  border: 1px solid black;
+  width: 30%;
+  pad: 1em 2em;
+  margin-bottom: 1em;
+}
+
+.special_sub_title{
+  font-size: 1.25em;
+  font-weight: bold;
+  padding-bottom: 0.25em;
 }
