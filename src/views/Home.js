@@ -6,6 +6,28 @@ import CurrentCard from './components/home_current_card';
 import FromTheBackCards from './components/home_from_the_back_card';
 import ExtraTimeCards from './components/home_extra_time_card';
 
+function realtimeUpdate(that) {
+  console.log('started')
+  axios({
+    method: 'GET',
+    // url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders',
+    url: 'http://backoffice.test/api/orders',
+  }).then(function (response) {
+    console.log('REALTIME-RESPONSE', response)
+    if (response.data.data.length > 0) {
+      console.log('REALTIME-DATA', response.data.data)
+      that.setState({
+        orders: response.data.data,
+      })
+    } else {
+      console.log('No orders found!')
+    }
+  })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -29,9 +51,13 @@ class Home extends React.Component {
           orders: response.data.data,
           current: ReactDOM.createRoot(document.getElementById('current_container'))
         })
-      }else{
+      } else {
         console.log('No orders found!')
       }
+      
+      setInterval(() => {
+        realtimeUpdate(that)
+      }, 2500);
     })
       .catch(function (error) {
         console.log(error);
@@ -41,7 +67,7 @@ class Home extends React.Component {
   setCurrentCards(order_id) {
     let currentOrders = this.state.current_orders
     let inCurrent = this.state.current_orders.findIndex(function (order) {
-      if(order){
+      if (order) {
         return order.id == order_id
       }
     });
