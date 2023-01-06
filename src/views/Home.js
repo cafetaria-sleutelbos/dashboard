@@ -10,8 +10,8 @@ function realtimeUpdate(that) {
   console.log('started')
   axios({
     method: 'GET',
-    // url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders',
-    url: 'http://backoffice.test/api/orders',
+    url: 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders',
+    // url: 'http://backoffice.test/api/orders',
   }).then(function (response) {
     console.log('REALTIME-RESPONSE', response)
     if (response.data.data.length > 0) {
@@ -113,6 +113,8 @@ class Home extends React.Component {
             <div className='home_titles'>Special</div>
             <div id='special_container' className='special_container'>
               {this.state.current_orders && <FromTheBackCards orders={this.state.current_orders} />}
+            </div>
+            <div id='special_container' className='special_container'>
               {this.state.current_orders && <ExtraTimeCards orders={this.state.current_orders} />}
             </div>
           </div>

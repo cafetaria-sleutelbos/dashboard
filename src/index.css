@@ -156,6 +156,12 @@ code {
   height: 40vh;
 }
 
+.special_container{
+  display: flex;
+  justify-content: left;
+  gap: 1.75em;
+}
+
 .special_sub_container {
   border: 1px solid black;
   width: 30%;
