@@ -7,7 +7,7 @@ import FromTheBackCards from './components/home_from_the_back_card';
 import ExtraTimeCards from './components/home_extra_time_card';
 import swap from '../images/swap.png';
 
-const BACKOFFICE_URL = 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/orders'
+const BACKOFFICE_URL = 'https://jellyfish-app-kkaj7.ondigitalocean.app/api/'
 // const BACKOFFICE_URL = 'http://backoffice.test/api/'
 
 function realtimeUpdate(that, newState = '') {
