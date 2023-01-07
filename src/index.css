@@ -67,6 +67,9 @@ code {
 }
 
 .home_titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
@@ -128,10 +131,22 @@ code {
 }
 
 .current_card_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.25em;
   font-size: 1.5em;
   font-weight: bold;
   border-bottom: 1px black solid;
+}
+
+.current_card_title_remove{
+  font-size: 0.75em;
+  font-weight: bold;
+  color: red;
+  border-left: 1px solid black;
+  padding-left: 0.5em;
+  cursor: pointer;
 }
 
 .current_card_content {
@@ -141,15 +156,31 @@ code {
   overflow-y: scroll;
 }
 
+.swap_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: violet;
+  padding: 0.25em;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.swap_btn{
+  width: 30px;
+  height: 30px;
+}
+
 .current_card_content span {
   border-top: 1px black solid;
 }
 
-.current_card_actions {
+.current_card_finish {
   border-top: 1px black solid;
   text-align: center;
   padding: 0.25em 0;
   background-color: greenyellow;
+  cursor: pointer;
 }
 
 .right_lower {
@@ -173,4 +204,8 @@ code {
   font-size: 1.25em;
   font-weight: bold;
   padding-bottom: 0.25em;
+}
+
+.selected{
+  background-color: rgb(233, 134, 134) !important;
 }
