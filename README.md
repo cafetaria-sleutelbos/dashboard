@@ -1,3 +1,9 @@
+# Dashboard
+Dashboard for Cafetaria de Sleutelbos
+
+This React.js application is meant to be used on an IPad. The Dashboard displays customer orders that still have to be prepared. This application can be found live at:
+https://dashboard-sb.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
